@@ -1,4 +1,4 @@
-import { MenuCounter } from '../counter/menuCounter.jsx';
+import { Counter } from '../counter/counter.jsx';
 
 export const Menu = ({ menuItems }) => {
   return (
@@ -8,7 +8,7 @@ export const Menu = ({ menuItems }) => {
         {menuItems.map((item) => (
           <li key={item.id}>
             {item.name}
-            <MenuCounter />
+            <Counter min={0} max={5} />
           </li>
         ))}
       </ul>

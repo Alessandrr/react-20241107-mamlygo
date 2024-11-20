@@ -1,7 +1,7 @@
 import { useCount } from './useCount.js';
 
-export const MenuCounter = () => {
-  const { count, increment, decrement } = useCount({ min: 0, max: 5 });
+export const Counter = (props) => {
+  const { count, increment, decrement } = useCount(props);
 
   return (
     <div>
