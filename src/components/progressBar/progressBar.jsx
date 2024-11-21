@@ -1,20 +1,24 @@
 import { useEffect, useState } from 'react';
 
+const getScrollProgress = () => {
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  return (scrollTop / scrollHeight) * 100;
+};
+
 export const ProgressBar = () => {
   const [progress, setProgress] = useState(0);
 
-  const handleScroll = () => {
-    const scrollTop =
-      document.documentElement.scrollTop || document.body.scrollTop;
-    const scrollHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    const scrollPercentage = (scrollTop / scrollHeight) * 100;
-    setProgress(scrollPercentage);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      setProgress(getScrollProgress());
+    };
+
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
