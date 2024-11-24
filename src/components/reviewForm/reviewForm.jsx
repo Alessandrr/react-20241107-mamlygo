@@ -1,5 +1,7 @@
 import { useForm } from './useForm.js';
 import { Counter } from '../counter/counter.jsx';
+import styles from './reviewForm.module.css';
+import classNames from 'classnames';
 
 export const ReviewForm = () => {
   const { form, setName, setText, setRating, clear } = useForm();
@@ -10,19 +12,21 @@ export const ReviewForm = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <div>
-        <span>Name</span>
+    <form onSubmit={handleFormSubmit} className={styles.formContainer}>
+      <div className={styles.formGroup}>
+        <span className={styles.formLabel}>Name</span>
         <input
+          className={styles.formInput}
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>
 
-      <div>
-        <span>Text</span>
+      <div className={styles.formGroup}>
+        <span className={styles.formLabel}>Text</span>
         <input
+          className={styles.formInput}
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
@@ -37,9 +41,21 @@ export const ReviewForm = () => {
         initialValue={rating}
       />
 
-      <button onClick={clear}>Clear</button>
+      <div className={styles.buttonsContainer}>
+        <button
+          className={classNames(styles.formButton, styles.clearButton)}
+          onClick={clear}
+        >
+          Clear
+        </button>
 
-      <button type="submit">Submit</button>
+        <button
+          className={classNames(styles.formButton, styles.submitButton)}
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   );
 };

@@ -1,17 +1,18 @@
 import { Counter } from '../counter/counter.jsx';
+import styles from './menu.module.css';
 
 export const Menu = ({ menuItems }) => {
   return (
-    <>
-      <h3>Menu</h3>
-      <ul>
+    <div className={styles.menuContainer}>
+      <h3 className={styles.menuTitle}>Menu</h3>
+      <ul className={styles.menuList}>
         {menuItems.map((item) => (
-          <li key={item.id}>
+          <li className={styles.menuItem} key={item.id}>
             {item.name}
             <Counter min={0} max={5} />
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
