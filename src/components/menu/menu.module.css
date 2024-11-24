@@ -1,0 +1,29 @@
+.menuContainer {
+    margin: 20px 0;
+    padding: 16px;
+    background-color: #f9f9ff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.menuTitle {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.menuList {
+    padding: 0;
+}
+
+.menuItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.menuItem:last-child {
+    border-bottom: none;
+}
