@@ -14,7 +14,10 @@ export const RestaurantsPage = () => {
 
   return (
     <>
-      <RestaurantTabs onChange={handleRestaurantChange} />
+      <RestaurantTabs
+        activeRestaurantId={selectedRestaurant.id}
+        onChange={handleRestaurantChange}
+      />
       <Restaurant
         key={selectedRestaurant.id}
         restaurantData={selectedRestaurant}
