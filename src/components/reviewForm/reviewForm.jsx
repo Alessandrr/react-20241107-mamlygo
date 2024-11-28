@@ -1,13 +1,11 @@
 import { useForm } from './useForm.js';
 import { Counter } from '../counter/counter.jsx';
 import styles from './reviewForm.module.css';
-import { Button } from '../button/button.jsx';
-import { useTheme } from '../themeContext/useTheme.js';
+import classNames from 'classnames';
 
 export const ReviewForm = () => {
   const { form, setName, setText, setRating, clear } = useForm();
   const { name, text, rating } = form;
-  const { value: themeValue } = useTheme();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -44,13 +42,19 @@ export const ReviewForm = () => {
       />
 
       <div className={styles.buttonsContainer}>
-        <Button theme={themeValue} viewVariant="clear" onClick={clear}>
+        <button
+          className={classNames(styles.formButton, styles.clearButton)}
+          onClick={clear}
+        >
           Clear
-        </Button>
+        </button>
 
-        <Button theme={themeValue} viewVariant="primary" type="submit">
+        <button
+          className={classNames(styles.formButton, styles.submitButton)}
+          type="submit"
+        >
           Submit
-        </Button>
+        </button>
       </div>
     </form>
   );

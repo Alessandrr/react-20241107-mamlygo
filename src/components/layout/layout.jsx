@@ -1,18 +1,13 @@
 import { ProgressBar } from '../progressBar/progressBar.jsx';
-import { ThemeContextProvider } from '../themeContext/themeContext.jsx';
-import { Header } from '../header/header.jsx';
-import { Footer } from '../footer/footer.jsx';
-import { UserContextProvider } from '../userContext/userContext.jsx';
+import styles from './layout.module.css';
 
 export const Layout = ({ children }) => {
   return (
-    <ThemeContextProvider>
-      <UserContextProvider>
-        <ProgressBar />
-        <Header />
-        {children}
-        <Footer />
-      </UserContextProvider>
-    </ThemeContextProvider>
+    <>
+      <ProgressBar />
+      <header className={styles.header}>Header</header>
+      {children}
+      <footer className={styles.footer}>footer</footer>
+    </>
   );
 };
