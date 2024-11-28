@@ -47,19 +47,3 @@
     transition: background-color 0.3s;
     min-width: 80px;
 }
-
-.submitButton {
-    background-color: #1d72b8;
-}
-
-.submitButton:hover {
-    background-color: #155a91;
-}
-
-.clearButton {
-    background-color: #ff6666;
-}
-
-.clearButton:hover {
-    background-color: #cc5151;
-}
