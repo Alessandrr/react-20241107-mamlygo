@@ -1,9 +1,9 @@
 import { Counter } from '../counter/counter.jsx';
 import styles from './menu.module.css';
-import { useUser } from '../userContext/useUser.js';
+import { useAuth } from '../authContext/useAuth.js';
 
 export const Menu = ({ menuItems }) => {
-  const { username } = useUser();
+  const { auth } = useAuth();
 
   return (
     <div className={styles.menuContainer}>
@@ -12,7 +12,7 @@ export const Menu = ({ menuItems }) => {
         {menuItems.map((item) => (
           <li className={styles.menuItem} key={item.id}>
             {item.name}
-            {username && <Counter min={0} max={5} />}
+            {auth.username && <Counter min={0} max={5} />}
           </li>
         ))}
       </ul>
