@@ -26,28 +26,6 @@
     background-color: #cc5151;
 }
 
-.tab,
-.tabSelected {
-    margin: 0 0 0 30px;
-    padding: 12px 0;
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-    display: inline-flex;
-    position: relative;
-    color: #3b3c3b;
-}
-
-.tabSelected:after {
-    content: "";
-    position: absolute;
-    top: calc(100% - 3px);
-    left: 0;
-    right: 0;
-    height: 3px;
-    background-color: #3b3c3b;
-}
-
 .counter {
     padding: 4px 8px;
     font-size: 0.8rem;
@@ -86,15 +64,6 @@
 
 .dark.button.clear:hover {
     background-color: #9C6C6B;
-}
-
-.dark.button.tab,
-.dark.button.tabSelected {
-    color: #394634;
-}
-
-.dark.button.tabSelected:after {
-    background-color: #394634;
 }
 
 .dark.button.counter {

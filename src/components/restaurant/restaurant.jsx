@@ -4,19 +4,14 @@ import { ReviewForm } from '../reviewForm/reviewForm.jsx';
 import styles from './restaurant.module.css';
 import { useAuth } from '../authContext/useAuth.js';
 
-export const Restaurant = ({ restaurantData }) => {
-  const { name, menu, reviews } = restaurantData;
+export const Restaurant = ({ name, menu, reviews }) => {
   const { auth } = useAuth();
-
-  if (!name || !menu.length) {
-    return null;
-  }
 
   return (
     <div className={styles.restaurant}>
       <h2>{name}</h2>
-      {Boolean(menu.length) && <Menu menuItems={menu} />}
-      {Boolean(reviews.length) && <Reviews reviews={reviews} />}
+      {Boolean(menu.length) && <Menu dishIds={menu} />}
+      {Boolean(reviews.length) && <Reviews reviewIds={reviews} />}
       {auth.isAuthenticated && <ReviewForm />}
     </div>
   );
