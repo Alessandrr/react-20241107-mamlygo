@@ -1,24 +1,14 @@
 import { Button } from '../button/button.jsx';
-import { useUser } from '../userContext/useUser.js';
-
-const STUB_USER = {
-  username: 'stub_user',
-};
+import { useAuth } from '../authContext/useAuth.js';
 
 export const LoginButton = () => {
-  const { username, setUsername } = useUser();
+  const { auth, toggleAuth } = useAuth();
 
-  const handleClick = () => {
-    if (!username) {
-      setUsername(STUB_USER.username);
-    } else {
-      setUsername(null);
-    }
-  };
+  const handleClick = () => toggleAuth();
 
   return (
     <Button onClick={handleClick}>
-      {username ? `${username}: Logout` : 'Login'}
+      {auth.isAuthenticated ? `${auth.username}: Logout` : 'Login'}
     </Button>
   );
 };
