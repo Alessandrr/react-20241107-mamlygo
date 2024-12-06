@@ -9,3 +9,13 @@
 .dish:last-child {
     border-bottom: none;
 }
+
+.dishLink {
+    text-decoration: none;
+    color: #302d2d;
+    transition: color 0.3s ease;
+}
+
+.dishLink:hover {
+    color: #1d72b8;
+}
