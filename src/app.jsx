@@ -4,7 +4,11 @@ import { ThemeContextProvider } from './components/themeContext/themeContext.jsx
 import { AuthContextProvider } from './components/authContext/authContext.jsx';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.js';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from 'react-router-dom';
 import { RestaurantContainer } from './components/restaurant/restaurant-container.jsx';
 import { Reviews } from './components/reviews/reviews.jsx';
 import { Menu } from './components/menu/menu.jsx';
@@ -25,7 +29,7 @@ const router = createBrowserRouter([
             children: [
               {
                 index: true,
-                element: <Menu />,
+                element: <Navigate to="menu" replace />,
               },
               {
                 path: 'reviews',
