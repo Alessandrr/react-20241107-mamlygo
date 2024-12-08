@@ -1,5 +1,5 @@
 import { Layout } from './components/layout/layout.jsx';
-import { RestaurantsPage } from './pages/restaurantsPage/retaurantsPage.jsx';
+import { RestaurantsPage } from './pages/restaurants-page/retaurantsPage.jsx';
 import { ThemeContextProvider } from './components/themeContext/themeContext.jsx';
 import { AuthContextProvider } from './components/authContext/authContext.jsx';
 import { Provider } from 'react-redux';
@@ -12,7 +12,9 @@ import {
 import { RestaurantContainer } from './components/restaurant/restaurant-container.jsx';
 import { Reviews } from './components/reviews/reviews.jsx';
 import { Menu } from './components/menu/menu.jsx';
-import { DishPage } from './pages/dishPage/dish-page.jsx';
+import { DishPage } from './pages/dish-page/dish-page.jsx';
+import { MenuPage } from './pages/menu-page/menu-page.jsx';
+import { ReviewsPage } from './pages/reviews-page/reviews-page.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,11 +35,11 @@ const router = createBrowserRouter([
               },
               {
                 path: 'reviews',
-                element: <Reviews />,
+                element: <ReviewsPage />,
               },
               {
                 path: 'menu',
-                element: <Menu />,
+                element: <MenuPage />,
               },
             ],
           },
