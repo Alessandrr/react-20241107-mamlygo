@@ -1,18 +1,11 @@
-import { Menu } from '../menu/menu.jsx';
-import { Reviews } from '../reviews/reviews.jsx';
-import { ReviewForm } from '../reviewForm/reviewForm.jsx';
-import styles from './restaurant.module.css';
-import { useAuth } from '../authContext/useAuth.js';
+import { Tab } from '../tab/tab.jsx';
 
-export const Restaurant = ({ name, menu, reviews }) => {
-  const { auth } = useAuth();
-
+export const Restaurant = ({ name, id }) => {
   return (
-    <div className={styles.restaurant}>
+    <div>
       <h2>{name}</h2>
-      {Boolean(menu.length) && <Menu dishIds={menu} />}
-      {Boolean(reviews.length) && <Reviews reviewIds={reviews} />}
-      {auth.isAuthenticated && <ReviewForm />}
+      <Tab title="Menu" linkTo={`/restaurants/${id}/menu`} />
+      <Tab title="Reviews" linkTo={`/restaurants/${id}/reviews`} />
     </div>
   );
 };
