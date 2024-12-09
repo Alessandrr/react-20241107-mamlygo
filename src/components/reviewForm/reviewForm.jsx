@@ -1,8 +1,9 @@
 import { useForm } from './useForm.js';
-import { Counter } from '../counter/counter.jsx';
+import { DishCounter } from '../counter/dishCounter.jsx';
 import styles from './reviewForm.module.css';
 import { Button } from '../button/button.jsx';
 import { useTheme } from '../themeContext/useTheme.js';
+import { ReviewStarCounter } from '../counter/review-star-counter.jsx';
 
 export const ReviewForm = () => {
   const { form, setName, setText, setRating, clear } = useForm();
@@ -35,9 +36,7 @@ export const ReviewForm = () => {
         />
       </div>
 
-      <Counter
-        min={1}
-        max={5}
+      <ReviewStarCounter
         onIncrement={setRating}
         onDecrement={setRating}
         initialValue={rating}

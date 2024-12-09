@@ -1,10 +1,7 @@
 import styles from './menu.module.css';
-import { useAuth } from '../authContext/useAuth.js';
 import { DishContainer } from '../dish/dish-container.jsx';
 
-export const Menu = ({ dishIds }) => {
-  const { auth } = useAuth();
-
+export const Menu = ({ dishIds, isAuthenticated }) => {
   return (
     <div className={styles.menuContainer}>
       <h3 className={styles.menuTitle}>Menu</h3>
@@ -13,7 +10,7 @@ export const Menu = ({ dishIds }) => {
           <DishContainer
             key={dishId}
             id={dishId}
-            isAuthenticated={auth.isAuthenticated}
+            isAuthenticated={isAuthenticated}
           />
         ))}
       </ul>

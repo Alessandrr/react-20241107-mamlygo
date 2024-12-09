@@ -7,5 +7,5 @@ export const DishContainer = ({ id, isAuthenticated }) => {
 
   if (!dish) return null;
 
-  return <Dish name={dish.name} isAuthenticated={isAuthenticated} />;
+  return <Dish name={dish.name} isAuthenticated={isAuthenticated} id={id} />;
 };
