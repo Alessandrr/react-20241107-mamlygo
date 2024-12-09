@@ -6,7 +6,7 @@ import {
   addToCart,
   removeFromCart,
   selectCartItemAmountById,
-} from '../../redux/entities/cart/cart-slice.js';
+} from '../../redux/ui/cart/cart-slice.js';
 
 export const DishCounter = ({ id }) => {
   const { value: themeValue } = useTheme();

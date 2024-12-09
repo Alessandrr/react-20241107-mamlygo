@@ -1,4 +1,5 @@
 import { Layout } from './components/layout/layout.jsx';
+import { RestaurantsPage } from './pages/restaurantsPage/retaurantsPage.jsx';
 import { ThemeContextProvider } from './components/themeContext/themeContext.jsx';
 import { AuthContextProvider } from './components/authContext/authContext.jsx';
 import { Provider } from 'react-redux';
@@ -33,11 +34,11 @@ const router = createBrowserRouter([
               },
               {
                 path: 'reviews',
-                element: <ReviewsPage />,
+                element: <Reviews />,
               },
               {
                 path: 'menu',
-                element: <MenuPage />,
+                element: <Menu />,
               },
             ],
           },
